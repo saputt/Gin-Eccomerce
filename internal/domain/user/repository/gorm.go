@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"errors"
-	"orders/internal/user"
+	"orders/internal/domain/user"
 
 	"gorm.io/gorm"
 )

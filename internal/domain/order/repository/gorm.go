@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 	"orders/internal/common/helper"
-	"orders/internal/order"
+	"orders/internal/domain/order"
 
 	"gorm.io/gorm"
 )

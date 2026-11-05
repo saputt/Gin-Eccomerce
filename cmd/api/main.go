@@ -2,14 +2,14 @@ package main
 
 import (
 	"log"
-	"orders/internal/auth"
+	"orders/internal/domain/auth"
+	"orders/internal/domain/inventory"
+	inventoryRepository "orders/internal/domain/inventory/repository"
+	"orders/internal/domain/product"
+	productRepository "orders/internal/domain/product/repository"
+	"orders/internal/domain/user"
+	userRepository "orders/internal/domain/user/repository"
 	"orders/internal/infrasctructure/database"
-	"orders/internal/inventory"
-	inventoryRepository "orders/internal/inventory/repository"
-	"orders/internal/product"
-	productRepository "orders/internal/product/repository"
-	"orders/internal/user"
-	userRepository "orders/internal/user/repository"
 	"os"
 
 	"github.com/gin-gonic/gin"

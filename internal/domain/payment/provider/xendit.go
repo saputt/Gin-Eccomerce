@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"orders/internal/payment"
+	"orders/internal/domain/payment"
 
 	"github.com/xendit/xendit-go/v6"
 	"github.com/xendit/xendit-go/v6/invoice"

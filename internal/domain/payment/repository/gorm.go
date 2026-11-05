@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"orders/internal/common/helper"
-	"orders/internal/payment"
+	"orders/internal/domain/payment"
 
 	"gorm.io/gorm"
 )
