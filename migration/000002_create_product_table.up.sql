@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS products (
+    id VARCHAR(36) PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    seller_id VARCHAR(36),
+    CONSTRAINT fk_product_seller FOREIGN KEY (seller_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);

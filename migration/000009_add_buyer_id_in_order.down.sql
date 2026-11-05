@@ -1,0 +1,2 @@
+ALTER TABLE orders DROP COLUMN buyer_id VARCHAR(36);
+ALTER TABLE orders DROP CONSTRAINT fk_order_buyer;
