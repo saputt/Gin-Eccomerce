@@ -74,7 +74,7 @@ Auth uses `Authorization: Bearer <token>`. JWT claims carry `id`, `email`, and `
 Prerequisites: Go 1.26+, PostgreSQL, and the `migrate` CLI.
 
 ```bash
-cp .env.example .env   # or edit the committed .env
+cp .env.example .env
 # JWT_SECRET=...
 # DATABASE_URL=postgresql://user:pass@host/db?sslmode=require
 ```
@@ -115,4 +115,4 @@ Server listens on `:3000`.
 
 ## Note on secrets
 
-`.env` is committed in this repository on purpose, for learning and reproducibility. It contains a live database URL and JWT secret — fine for a sandbox, not for production. If this repo is ever used for anything real, rotate those credentials and move them out of version control.
+`.env` is git-ignored. Copy `.env.example` and fill in your own values. The file was committed in the first commit of this repository, so the old database URL and JWT secret still exist in history — rotate them if it was ever a live credential.

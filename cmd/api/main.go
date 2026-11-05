@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"orders/internal/common/middleware"
 	"orders/internal/domain/auth"
 	"orders/internal/domain/inventory"
 	inventoryRepository "orders/internal/domain/inventory/repository"
@@ -47,6 +48,8 @@ func main() {
 	authHandler := auth.NewAuthHandler(authService)
 	authHandler.RegisterRoutes(api)
 
+	authMiddleware := middleware.AuthMiddleware(authService)
+
 	inventoryRepo := inventoryRepository.NewGormInventoryRepository(db)
 	inventoryService := inventory.NewInventoryService(inventoryRepo)
 	inventoryHandler := inventory.NewInventoryHandler(inventoryService)
@@ -55,7 +58,7 @@ func main() {
 	productRepo := productRepository.NewGormProductRepository(db)
 	productService := product.NewProductService(productRepo, inventoryService)
 	productHandler := product.NewProductHandler(productService, authService)
-	productHandler.RegisterRoutes(api)
+	productHandler.RegisterRoutes(api, authMiddleware)
 
 	if err := router.Run(":3000"); err != nil {
 		panic(err)

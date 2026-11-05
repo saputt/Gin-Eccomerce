@@ -51,10 +51,10 @@ func (h *OrderHandler) CreateOrder(c *gin.Context) {
 	response.SuccessRes(c, http.StatusOK, "Create order success", res)
 }
 
-func (h *OrderHandler) CancelOrder(c *gin.Context) {
-	h.service.CancelOrder()
-}
+// func (h *OrderHandler) CancelOrder(c *gin.Context) {
+// 	h.service.CancelOrder()
+// }
 
-func (h *OrderHandler) FindOrder(c *gin.Context) {}
+// func (h *OrderHandler) FindOrder(c *gin.Context) {}
 
-func (h *OrderHandler) FindMySuborderForBuyer(c *gin.Context) {}
+// func (h *OrderHandler) FindMySuborderForBuyer(c *gin.Context) {}
